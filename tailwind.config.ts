@@ -12,6 +12,10 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        // Fixed syntax error and added font family
+        roboto: ['"Roboto Condensed"', "sans-serif"], // Added Roboto Condensed
+      },
     },
   },
   plugins: [],
