@@ -16,8 +16,8 @@ if (!projectId) {
 
 // Set up metadata
 const metadata = {
-  name: "FROG | Soup",
-  description: "Frog Soup Cafe",
+  name: "appkit-example",
+  description: "AppKit Example",
   url: "https://appkitexampleapp.com", // origin must match your domain & subdomain
   icons: ["https://avatars.githubusercontent.com/u/179229932"],
 };

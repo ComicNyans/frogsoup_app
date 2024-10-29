@@ -8,7 +8,7 @@ import { headers } from "next/headers"; // added
 import ContextProvider from "@/context";
 
 export const metadata: Metadata = {
-  title: "Frog Soup | Cafe",
+  title: "Frog Soup | CAFE",
   description: "",
 };
 
