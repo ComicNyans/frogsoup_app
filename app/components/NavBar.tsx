@@ -31,7 +31,8 @@ const NavBar = () => {
             Frog Soup Cafe
           </h1>
         </div>
-        <w3m-button />
+        {/* To replace with button logic */}
+        {/* <w3m-button /> */}
         <div className="wallet-connect px-4 py-2  ">
           <button className=" items-center hidden sm:flex uppercase">
             <span className=" mr-2">
