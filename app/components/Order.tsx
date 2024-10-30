@@ -15,10 +15,13 @@ const Order = () => {
               Chefs and ready for many adventures to come.
             </p>
             <p className="text-xl my-4 font-bold">
-              --% of each mint buys $TOAD and sends it to be locked away safely
+              25% of each mint buys $TOAD and sends it to be locked away safely
               in
-              <a href=""> the kitchen</a>, further limiting circulating supply
-              for good.
+              <a href="https://etherscan.io/address/0x000000000000000000000000000000000000dead">
+                {" "}
+                the kitchen
+              </a>
+              , further limiting circulating supply for good.
             </p>
             <p className=" mb-2">
               The remainder goes to the team as gratuity for their services
