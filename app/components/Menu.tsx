@@ -2,7 +2,7 @@ import React from "react";
 
 const Menu = () => {
   return (
-    <div className="lg:w-2/3 p-4 menu-sheet">
+    <div className="md:w-2/3  p-4 menu-sheet">
       <div className="menu-heading">MENU</div>
       <p className=" text-center">
         Welcome! Make yourself at home and order a delicious Frog Soup.
@@ -16,8 +16,8 @@ const Menu = () => {
         </div>
       </div>
       <div className="flex flex-col">
-        <div className="mt-2 mb-10 mx-10 flex justify-between items-center">
-          <div>
+        <div className="mt-2 mb-10 mx-10 flex flex-col text-center md:text-start md:flex-row justify-between items-center">
+          <div className=" flex flex-col items-center md:items-start pb-4 md:pb-0">
             <h3 className="text-3xl font-bold soup-title">SOUP FOR ONE</h3>
             <p>A single serving of Frog Soup.</p>
             <div className="soupicon-container flex">
@@ -30,8 +30,8 @@ const Menu = () => {
           </button>
         </div>
         <hr className=" mb-5" />
-        <div className="mb-10 mx-10 flex justify-between items-center">
-          <div>
+        <div className="mb-10 mx-10 flex flex-col text-center md:text-start md:flex-row justify-between items-center">
+          <div className="flex flex-col items-center md:items-start pb-4 md:pb-0">
             <span className="discount-tag">
               10% <br />
               OFF!
@@ -48,8 +48,8 @@ const Menu = () => {
           </button>
         </div>
         <hr className=" mb-5" />
-        <div className="mb-10 mx-10 flex justify-between items-center">
-          <div>
+        <div className="mb-10 mx-10 flex flex-col text-center md:text-start md:flex-row justify-between items-center">
+          <div className="flex flex-col items-center md:items-start pb-4 md:pb-0">
             <span className="discount-tag">
               20% <br />
               OFF!
@@ -66,8 +66,8 @@ const Menu = () => {
           </button>
         </div>
         <hr className=" mb-5" />
-        <div className="mb-10 mx-10 flex justify-between items-center">
-          <div>
+        <div className="mb-10 mx-10 flex flex-col text-center md:text-start md:flex-row justify-between items-center">
+          <div className="flex flex-col items-center md:items-start pb-4 md:pb-0">
             <span className="discount-tag">
               33% <br />
               OFF!
