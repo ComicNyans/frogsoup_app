@@ -2,7 +2,7 @@ import React from "react";
 
 const Menu = () => {
   return (
-    <div className="md:w-2/3  p-4 menu-sheet">
+    <div className="lg:w-2/3  p-4 menu-sheet">
       <div className="menu-heading">MENU</div>
       <p className=" text-center">
         Welcome! Make yourself at home and order a delicious Frog Soup.

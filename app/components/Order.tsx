@@ -26,7 +26,7 @@ const Order = () => {
           </div>
         </div>
       </div>
-      <div className="progressDiv flex flex-col hidden md:block">
+      <div className="progressDiv flex-col hidden md:flex">
         <div className="mb-4 flex justify-between items-center">
           <div>
             <h1 className="text-3xl font-bold mb-3">Order Status</h1>

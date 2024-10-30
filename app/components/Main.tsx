@@ -8,7 +8,7 @@ const Main = () => {
   const { address, isConnecting, isDisconnected } = useAccount();
   console.log(address);
   return (
-    <div className="container mx-auto px-4 py-8 lg:flex lg:flex-row-reverse lg:justify-between gap-4 text-black">
+    <div className="container mx-auto px-4 py-8 flex flex-col items-center lg:items-start lg:flex lg:flex-row-reverse lg:justify-between gap-4 text-black">
       <Order />
       <Menu />
     </div>
