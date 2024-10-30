@@ -10,9 +10,6 @@ import { useAccount } from "wagmi";
 
 const NavBar = () => {
   const { address, isConnecting, isDisconnected } = useAccount();
-  const [connected, setConnected] = useState<string | undefined>(
-    "CONNECT WALLET"
-  );
 
   console.log(address);
 
@@ -36,9 +33,11 @@ const NavBar = () => {
         <div className="wallet-connect px-4 py-2  ">
           <button className=" items-center hidden sm:flex uppercase">
             <span className=" mr-2">
-              <WalletIcon />
+              <WalletIcon className=" md:hidden lg:block" />
             </span>
-            {connected}
+            {address
+              ? `${address?.slice(0, 6)}...${address?.slice(-6)}`
+              : "Connect Wallet"}
           </button>
           <MenuIcon className=" sm:hidden" />
         </div>

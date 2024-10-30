@@ -1,6 +1,21 @@
 import React from "react";
+import { useWriteContract, useReadContract } from "wagmi";
+import { abi } from "../ABI/ABI";
+import { useState, useEffect } from "react";
 
 const Menu = () => {
+  const [minted, setMinted] = useState();
+  const { writeContract } = useWriteContract();
+  const { data: latestMintedTokenId } = useReadContract({
+    abi,
+    address: "0x6b175474e89094c44da98b954eedeac495271d0f",
+    functionName: "latestMintedTokenId",
+  });
+
+  useEffect(() => {
+    setMinted(latestMintedTokenId);
+  }, []);
+
   return (
     <div className="lg:w-2/3  p-4 menu-sheet">
       <div className="menu-heading">MENU</div>
@@ -12,7 +27,7 @@ const Menu = () => {
       </p>
       <div className="w-full sold-meter-outer overflow-hidden mt-2 mb-8">
         <div className="sold-meter-inner h-6" style={{ width: "0%" }}>
-          <div className="meter-counter">?/5029</div>
+          <div className="meter-counter">{minted}/5029</div>
         </div>
       </div>
       <div className="flex flex-col">
@@ -24,7 +39,17 @@ const Menu = () => {
               <img src="/1soup.gif" alt="" />
             </div>
           </div>
-          <button className="px-4 py-2 mint-button">
+          <button
+            className="px-4 py-2 mint-button"
+            onClick={() => {
+              console.log(44);
+              writeContract({
+                abi,
+                address: "0x6b175474e89094c44da98b954eedeac495271d0f",
+                functionName: "mint1",
+              });
+            }}
+          >
             <span className="mintfor">MINT FOR</span>
             <span className="price">0.03ETH</span>
           </button>
@@ -42,9 +67,19 @@ const Menu = () => {
               <img src="/3soup.gif" alt="" />
             </div>
           </div>
-          <button className="px-4 py-2 mint-button">
+          <button
+            className="px-4 py-2 mint-button"
+            onClick={() => {
+              console.log(44);
+              writeContract({
+                abi,
+                address: "0x6b175474e89094c44da98b954eedeac495271d0f",
+                functionName: "mint3",
+              });
+            }}
+          >
             <span className="mintfor">MINT FOR</span>
-            <span className="price">0.03ETH</span>
+            <span className="price">0.08ETH</span>
           </button>
         </div>
         <hr className=" mb-5" />
@@ -60,9 +95,19 @@ const Menu = () => {
               <img src="/5soup.gif" alt="" />
             </div>
           </div>
-          <button className="px-4 py-2 mint-button">
+          <button
+            className="px-4 py-2 mint-button"
+            onClick={() => {
+              console.log(44);
+              writeContract({
+                abi,
+                address: "0x6b175474e89094c44da98b954eedeac495271d0f",
+                functionName: "mint5",
+              });
+            }}
+          >
             <span className="mintfor">MINT FOR</span>
-            <span className="price">0.03ETH</span>
+            <span className="price">0.12ETH</span>
           </button>
         </div>
         <hr className=" mb-5" />
@@ -80,9 +125,19 @@ const Menu = () => {
               <img src="/10soup.gif" alt="" />
             </div>
           </div>
-          <button className="px-4 py-2 mint-button">
+          <button
+            className="px-4 py-2 mint-button"
+            onClick={() => {
+              console.log(44);
+              writeContract({
+                abi,
+                address: "0x6b175474e89094c44da98b954eedeac495271d0f",
+                functionName: "mint10",
+              });
+            }}
+          >
             <span className="mintfor">MINT FOR</span>
-            <span className="price">0.03ETH</span>
+            <span className="price">0.20ETH</span>
           </button>
         </div>
       </div>
