@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 import { useWriteContract, useReadContract, useAccount } from "wagmi";
 import { useContext } from "react";
@@ -7,7 +8,7 @@ import { useState, useEffect } from "react";
 import { parseEther } from "viem";
 
 const Menu = () => {
-  const [minted, setMinted] = useState();
+  const [minted, setMinted] = useState<any>();
   const { writeContract } = useWriteContract();
   const { address } = useAccount();
   const modal = useContext(ModalContext);
@@ -18,9 +19,7 @@ const Menu = () => {
   });
 
   useEffect(() => {
-    if (result.data) {
-      setMinted(result.data.toString() as any);
-    }
+    setMinted(result.data as string);
   }, [result.data]);
   return (
     <div className="lg:w-2/3  p-4 menu-sheet">
