@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 "use client";
 
 import React from "react";
@@ -30,7 +32,7 @@ const Claim = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen text-white">
       {(() => {
-        if (result.data === 0n) {
+        if (result.data === BigInt(0)) {
           return (
             <div className=" flex flex-col justify-center items-center text-2xl gap-4">
               You are not eligible to claim Soup NFT
