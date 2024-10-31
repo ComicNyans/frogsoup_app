@@ -2,20 +2,21 @@ import React from "react";
 import { useWriteContract, useReadContract } from "wagmi";
 import { abi } from "../ABI/ABI";
 import { useState, useEffect } from "react";
+import { ethers } from "ethers";
+import { parseEther } from "viem";
 
 const Menu = () => {
   const [minted, setMinted] = useState();
   const { writeContract } = useWriteContract();
-  const { data: latestMintedTokenId } = useReadContract({
+  const result = useReadContract({
     abi,
-    address: "0x6b175474e89094c44da98b954eedeac495271d0f",
-    functionName: "latestMintedTokenId",
+    address: "0x58172B314187e35892DeEc5DD0e2f847893e5405",
+    functionName: "totalSupply",
   });
 
   useEffect(() => {
-    setMinted(latestMintedTokenId);
-  }, []);
-
+    setMinted(result.data as string);
+  }, [result.data]);
   return (
     <div className="lg:w-2/3  p-4 menu-sheet">
       <div className="menu-heading">MENU</div>
@@ -27,7 +28,7 @@ const Menu = () => {
       </p>
       <div className="w-full sold-meter-outer overflow-hidden mt-2 mb-8">
         <div className="sold-meter-inner h-6" style={{ width: "0%" }}>
-          <div className="meter-counter">{minted}/5029</div>
+          <div className="meter-counter">{minted ? minted : "-"}/5029</div>
         </div>
       </div>
       <div className="flex flex-col">
@@ -41,13 +42,17 @@ const Menu = () => {
           </div>
           <button
             className="px-4 py-2 mint-button"
-            onClick={() => {
-              console.log(44);
-              writeContract({
-                abi,
-                address: "0x6b175474e89094c44da98b954eedeac495271d0f",
-                functionName: "mint1",
-              });
+            onClick={async () => {
+              try {
+                writeContract({
+                  address: "0x58172B314187e35892DeEc5DD0e2f847893e5405",
+                  abi,
+                  functionName: "mint1",
+                  value: parseEther("0.03"),
+                });
+              } catch (e) {
+                console.log(e);
+              }
             }}
           >
             <span className="mintfor">MINT FOR</span>
@@ -75,6 +80,7 @@ const Menu = () => {
                 abi,
                 address: "0x6b175474e89094c44da98b954eedeac495271d0f",
                 functionName: "mint3",
+                value: ethers.utils.parseEther("0.08"),
               });
             }}
           >
@@ -103,6 +109,7 @@ const Menu = () => {
                 abi,
                 address: "0x6b175474e89094c44da98b954eedeac495271d0f",
                 functionName: "mint5",
+                value: ethers.utils.parseEther("0.12").toString(),
               });
             }}
           >
@@ -133,6 +140,7 @@ const Menu = () => {
                 abi,
                 address: "0x6b175474e89094c44da98b954eedeac495271d0f",
                 functionName: "mint10",
+                value: ethers.utils.parseEther("0.20"),
               });
             }}
           >
