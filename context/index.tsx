@@ -4,7 +4,7 @@ import { wagmiAdapter, projectId } from "@/config";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createAppKit } from "@reown/appkit/react";
 import { mainnet, arbitrum } from "@reown/appkit/networks";
-import React, { type ReactNode } from "react";
+import React, { type ReactNode, createContext } from "react";
 import { cookieToInitialState, WagmiProvider, type Config } from "wagmi";
 
 // Set up queryClient
@@ -31,8 +31,19 @@ const modal = createAppKit({
   metadata: metadata,
   features: {
     analytics: true, // Optional - defaults to your Cloud configuration
+    socials: false,
+    email: false,
+    onramp: false,
+  },
+  themeVariables: {
+    "--w3m-color-mix": "#472d3c",
+    "--w3m-color-mix-strength": 40,
+    "--w3m-accent": "#f4b41b",
   },
 });
+
+// Create a Modal Context
+export const ModalContext = createContext<any>(null);
 
 function ContextProvider({
   children,
@@ -51,7 +62,11 @@ function ContextProvider({
       config={wagmiAdapter.wagmiConfig as Config}
       initialState={initialState}
     >
-      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+      <ModalContext.Provider value={modal}>
+        <QueryClientProvider client={queryClient}>
+          {children}
+        </QueryClientProvider>
+      </ModalContext.Provider>
     </WagmiProvider>
   );
 }

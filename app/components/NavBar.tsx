@@ -4,14 +4,13 @@ import React from "react";
 import Image from "next/image";
 import WalletIcon from "@mui/icons-material/Wallet";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useState } from "react";
-
 import { useAccount } from "wagmi";
+import { useContext } from "react";
+import { ModalContext } from "./../../context/index";
 
 const NavBar = () => {
-  const { address, isConnecting, isDisconnected } = useAccount();
-
-  console.log(address);
+  const { address } = useAccount();
+  const modal = useContext(ModalContext);
 
   return (
     <div className=" px-4 sm:px-8 md:px-24 lg:px-48 bg-[#7a444a]">
@@ -31,7 +30,12 @@ const NavBar = () => {
         {/* To replace with button logic */}
         {/* <w3m-button /> */}
         <div className="wallet-connect px-4 py-2  ">
-          <button className=" items-center hidden sm:flex uppercase">
+          <button
+            className=" items-center hidden sm:flex uppercase"
+            onClick={() => {
+              modal.open();
+            }}
+          >
             <span className=" mr-2">
               <WalletIcon className=" md:hidden lg:block" />
             </span>
