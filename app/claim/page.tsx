@@ -35,7 +35,7 @@ const Claim = () => {
         {(() => {
           if (result.data === BigInt(0)) {
             return (
-              <div className=" flex flex-col justify-center items-center text-2xl gap-4">
+              <div className=" flex flex-col justify-center items-center text-2xl gap-4 text-center">
                 You are not eligible to claim Soup NFT
                 <img src="sad.gif" alt="" height={90} width={90} />
                 <Link href={"/"} className=" text-[#f4b41b]">
@@ -52,7 +52,7 @@ const Claim = () => {
           } else {
             return (
               <>
-                <div className=" flex flex-col justify-center items-center gap-4 text-2xl">
+                <div className=" flex flex-col justify-center items-center gap-4 text-2xl text-center">
                   You are eligible to claim Soup NFT
                   <h1>Input Token ID</h1>
                   <input
@@ -87,7 +87,7 @@ const Claim = () => {
     );
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen text-white">
+    <div className="flex flex-col items-center justify-center h-screen text-white text-center">
       {(() => {
         if (result.data === BigInt(0)) {
           return (
