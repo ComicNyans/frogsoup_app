@@ -8,10 +8,26 @@ import { useAccount } from "wagmi";
 import { useContext } from "react";
 import { ModalContext } from "./../../context/index";
 import Link from "next/link";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Modal from "@mui/material/Modal";
+
+const style = {
+  position: "absolute",
+  width: "100%",
+  bgcolor: "#7a444a",
+  border: "2px solid #000",
+  boxShadow: 24,
+  p: 4,
+};
 
 const NavBar = () => {
   const { address } = useAccount();
   const modal = useContext(ModalContext);
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   return (
     <div className=" px-4 sm:px-8 md:px-24 lg:px-48 bg-[#7a444a]">
@@ -56,12 +72,35 @@ const NavBar = () => {
                 ? `${address?.slice(0, 6)}...${address?.slice(-6)}`
                 : "Connect Wallet"}
             </button>
-            <div
-              onClick={() => {
-                modal.open();
-              }}
-            >
-              {/* <WalletIcon className=" sm:hidden" /> */}
+
+            <div>
+              <WalletIcon onClick={handleOpen} className=" sm:hidden" />
+              <div>
+                <Modal
+                  open={open}
+                  onClose={handleClose}
+                  aria-labelledby="modal-modal-title"
+                  aria-describedby="modal-modal-description"
+                  className=" flex flex-col  items-end w-full"
+                >
+                  <Box sx={style}>
+                    <Typography
+                      id="modal-modal-title"
+                      className=" text-3xl mb-4"
+                    >
+                      Menu
+                    </Typography>
+                    <div className=" text-[#f4b41b]  text-xl mr-4 justify-between gap-4 cursor-pointer sm:flex">
+                      <a href="/claim" className="text-[#f4b41b]">
+                        <h1 className="hover:text-[#f4cca1]">CLAIM</h1>
+                      </a>
+                      <a href="/burn" className="text-[#f4b41b]">
+                        <h1 className="hover:text-[#f4cca1]">BURN</h1>
+                      </a>
+                    </div>
+                  </Box>
+                </Modal>
+              </div>
             </div>
           </div>
         </div>
