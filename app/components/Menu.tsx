@@ -27,7 +27,8 @@ const Menu = () => {
         Welcome! Make yourself at home and order a delicious Frog Soup.
       </p>
       <p className=" text-center">
-        A limited number of servings available, so get them while they're hot!
+        A limited number of servings available, so get them while they&apos;re
+        hot!
       </p>
       <div className="w-full sold-meter-outer overflow-hidden mt-2 mb-8">
         <div className="sold-meter-inner h-6" style={{ width: "0%" }}>

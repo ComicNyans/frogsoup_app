@@ -34,22 +34,16 @@ const Claim = () => {
           return (
             <div className=" flex flex-col justify-center items-center text-2xl gap-4">
               You are not eligible to claim Soup NFT
-              
               <img src="sad.gif" alt="" height={90} width={90} />
               <Link href={"/"} className=" text-[#f4b41b]">
-          Go to Mint =>
-            </Link>
-
-              
+                Go to Mint →
+              </Link>
             </div>
           );
-        } else if(result.data== undefined){
+        } else if (result.data == undefined) {
           return (
             <div className=" flex flex-col justify-center items-center text-2xl gap-4">
               Checking eligibility...
-              
-            
-              
             </div>
           );
         } else {
