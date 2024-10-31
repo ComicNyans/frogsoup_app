@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import WalletIcon from "@mui/icons-material/Wallet";
-// import MenuIcon from "@mui/icons-material/Menu";
+import MenuIcon from "@mui/icons-material/Menu";
 import { useAccount } from "wagmi";
 import { useContext } from "react";
 import { ModalContext } from "./../../context/index";
@@ -74,7 +74,7 @@ const NavBar = () => {
             </button>
 
             <div>
-              <WalletIcon onClick={handleOpen} className=" sm:hidden" />
+              <MenuIcon onClick={handleOpen} className=" sm:hidden" />
               <div>
                 <Modal
                   open={open}
