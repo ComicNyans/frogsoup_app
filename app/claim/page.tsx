@@ -31,7 +31,7 @@ const Claim = () => {
   console.log(result.data);
   if (address === undefined)
     return (
-      <div className="flex flex-col items-center justify-center h-screen text-white">
+      <div className="flex flex-col items-center justify-center h-screen text-white px-4 text-center">
         {(() => {
           if (result.data === BigInt(0)) {
             return (
