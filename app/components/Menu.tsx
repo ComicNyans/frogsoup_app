@@ -4,7 +4,6 @@ import { useContext } from "react";
 import { ModalContext } from "./../../context/index";
 import { abi } from "../ABI/ABI";
 import { useState, useEffect } from "react";
-import { ethers } from "ethers";
 import { parseEther } from "viem";
 
 const Menu = () => {
@@ -100,7 +99,7 @@ const Menu = () => {
                 abi,
                 address: "0x6b175474e89094c44da98b954eedeac495271d0f",
                 functionName: "mint3",
-                value: ethers.utils.parseEther("0.08"),
+                value: parseEther("0.08"),
               });
             }}
           >
@@ -129,7 +128,7 @@ const Menu = () => {
                 abi,
                 address: "0x6b175474e89094c44da98b954eedeac495271d0f",
                 functionName: "mint5",
-                value: ethers.utils.parseEther("0.12").toString(),
+                value: parseEther("0.12"),
               });
             }}
           >
@@ -147,7 +146,7 @@ const Menu = () => {
             <h3 className="text-3xl font-bold soup-title">
               BANQUET DE GRENOUILLES
             </h3>
-            <p>Ten soups, for when you just can't get enough.</p>
+            <p>Ten soups, for when you just can&apos;t get enough.</p>
             <div className="soupicon-container flex">
               <img src="/10soup.gif" alt="" />
             </div>
@@ -160,7 +159,7 @@ const Menu = () => {
                 abi,
                 address: "0x6b175474e89094c44da98b954eedeac495271d0f",
                 functionName: "mint10",
-                value: ethers.utils.parseEther("0.20"),
+                value: parseEther("0.20"),
               });
             }}
           >
