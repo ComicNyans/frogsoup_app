@@ -46,7 +46,7 @@ const Claim = () => {
           } else if (result.data == undefined) {
             return (
               <div className=" flex flex-col justify-center items-center text-2xl gap-4">
-                Connect Wallet to check
+                Connect Wallet to check eligibility
               </div>
             );
           } else {
