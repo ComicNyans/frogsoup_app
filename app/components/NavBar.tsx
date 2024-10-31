@@ -57,6 +57,21 @@ const NavBar = () => {
             </a>
           </div>
 
+          <div className="wallet-connect hidden sm:flex  px-4 py-2  ">
+            <button
+              className=" items-center flex uppercase"
+              onClick={() => {
+                modal.open();
+              }}
+            >
+              <span className=" mr-2">
+                <WalletIcon className=" md:hidden lg:block" />
+              </span>
+              {address
+                ? `${address?.slice(0, 6)}...${address?.slice(-6)}`
+                : "Connect Wallet"}
+            </button>
+          </div>
           <div className="wallet-connect px-4 py-2 sm:hidden  ">
             <div>
               <MenuIcon onClick={handleOpen} />
