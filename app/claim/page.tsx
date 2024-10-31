@@ -29,47 +29,63 @@ const Claim = () => {
   console.log(result.data);
   return (
     <div className="flex flex-col items-center justify-center h-screen text-white">
-      {result.data === 0n ? (
-        <div className=" flex flex-col justify-center items-center text-2xl gap-4">
-          You are not eligible to claim Soup NFT
-          <div>
-            <img src="sad.gif" alt="" height={90} width={90} />
-          </div>
-          <Link href={"/"} className=" text-[#f4b41b]">
+      {(() => {
+        if (result.data === 0n) {
+          return (
+            <div className=" flex flex-col justify-center items-center text-2xl gap-4">
+              You are not eligible to claim Soup NFT
+              
+              <img src="sad.gif" alt="" height={90} width={90} />
+              <Link href={"/"} className=" text-[#f4b41b]">
           Go to Mint =>
             </Link>
-        </div>
-      ) : (
-        <>
-          <div className=" flex flex-col justify-center items-center gap-4 text-2xl">
-            You are eligible to claim Soup NFT
-            <h1>Input Token ID</h1>
-            <input
-              type="text"
-              placeholder=""
-              onChange={handleInputChange}
-              className="mb-4 text-black"
-            />
-          </div>
-          <button
-            className="px-4 py-2 mint-button"
-            onClick={async () => {
-              try {
-                writeContract({
-                  address: "0x58172B314187e35892DeEc5DD0e2f847893e5405",
-                  abi,
-                  functionName: "mintFree",
-                  args: numbers,
-                });
-              } catch (e) {
-                console.log(e);
-              }
-            }}
-          >
-            CLAIM MY SOUP
-          </button>
-        </>
-      )}
+
+              
+            </div>
+          );
+        } else if(result.data== undefined){
+          return (
+            <div className=" flex flex-col justify-center items-center text-2xl gap-4">
+              Checking eligibility...
+              
+            
+              
+            </div>
+          );
+        } else {
+          return (
+            <>
+              <div className=" flex flex-col justify-center items-center gap-4 text-2xl">
+                You are eligible to claim Soup NFT
+                <h1>Input Token ID</h1>
+                <input
+                  type="text"
+                  placeholder=""
+                  onChange={handleInputChange}
+                  className="mb-4 text-black"
+                />
+              </div>
+              <button
+                className="px-4 py-2 mint-button"
+                onClick={async () => {
+                  try {
+                    writeContract({
+                      address: "0x58172B314187e35892DeEc5DD0e2f847893e5405",
+                      abi,
+                      functionName: "mintFree",
+                      args: numbers,
+                    });
+                  } catch (e) {
+                    console.log(e);
+                  }
+                }}
+              >
+                CLAIM MY SOUP
+              </button>
+            </>
+          );
+        }
+      })()}
     </div>
   );
 };

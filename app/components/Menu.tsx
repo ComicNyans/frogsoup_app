@@ -1,5 +1,7 @@
 import React from "react";
-import { useWriteContract, useReadContract } from "wagmi";
+import { useWriteContract, useReadContract, useAccount } from "wagmi";
+import { useContext } from "react";
+import { ModalContext } from "./../../context/index";
 import { abi } from "../ABI/ABI";
 import { useState, useEffect } from "react";
 import { ethers } from "ethers";
@@ -8,6 +10,8 @@ import { parseEther } from "viem";
 const Menu = () => {
   const [minted, setMinted] = useState();
   const { writeContract } = useWriteContract();
+  const { address } = useAccount();
+  const modal = useContext(ModalContext);
   const result = useReadContract({
     abi,
     address: "0x58172B314187e35892DeEc5DD0e2f847893e5405",
@@ -28,7 +32,9 @@ const Menu = () => {
       </p>
       <div className="w-full sold-meter-outer overflow-hidden mt-2 mb-8">
         <div className="sold-meter-inner h-6" style={{ width: "0%" }}>
-          <div className="meter-counter">{minted ? minted : "-"}/5029</div>
+          <div className="meter-counter">
+            {minted ? minted : "-"}/5029 Soups Served{" "}
+          </div>
         </div>
       </div>
       <div className="flex flex-col">
@@ -43,12 +49,26 @@ const Menu = () => {
           <button
             className="px-4 py-2 mint-button"
             onClick={async () => {
+              if (address == undefined) {
+                modal.open();
+                try {
+                  await writeContract({
+                    address: "0x58172B314187e35892DeEc5DD0e2f847893e5405",
+                    abi,
+                    functionName: "mint1",
+                    //value: parseEther("0.03"),
+                  });
+                  // Optionally, you can close the modal here if needed
+                } catch (e) {
+                  console.log(e);
+                }
+              }
               try {
                 writeContract({
                   address: "0x58172B314187e35892DeEc5DD0e2f847893e5405",
                   abi,
                   functionName: "mint1",
-                  value: parseEther("0.03"),
+                  //value: parseEther("0.03"),
                 });
               } catch (e) {
                 console.log(e);

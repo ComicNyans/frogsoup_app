@@ -33,7 +33,10 @@ const Order = () => {
         <div className="mb-4 flex justify-between items-center">
           <div>
             <h1 className="text-3xl font-bold mb-3">Place an Order</h1>
-            <p>You can place an order from the menu...</p>
+            <p>
+              You can place an order by selecting a Soup treat from the left
+              menu.
+            </p>
           </div>
         </div>
       </div>

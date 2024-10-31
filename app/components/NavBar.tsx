@@ -61,7 +61,7 @@ const NavBar = () => {
                 modal.open();
               }}
             >
-              <WalletIcon className=" sm:hidden" />
+              {/* <WalletIcon className=" sm:hidden" /> */}
             </div>
           </div>
         </div>
