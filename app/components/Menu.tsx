@@ -18,7 +18,9 @@ const Menu = () => {
   });
 
   useEffect(() => {
-    setMinted(result.data as string);
+    if (result.data) {
+      setMinted(result.data.toString() as any);
+    }
   }, [result.data]);
   return (
     <div className="lg:w-2/3  p-4 menu-sheet">
