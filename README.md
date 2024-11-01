@@ -1,7 +1,7 @@
 This is a front end for SoupNFTs of the ToadKiller project
-## Running locally
+## SoupNFTs of the ToadKiller App
 
-First, clone the repo to you local pc
+to run locally first, clone the repo to you local pc
 
 Navigate to the folder and open it in your code editor the run npm i ethers --legacy-peer-deps to install deps.
 
