@@ -50,7 +50,7 @@ const Claim = () => {
             return (
               <div className=" flex flex-col justify-center items-center text-2xl gap-4">
                 Connect Wallet to check eligibility
-                <div className="wallet-connect hidden sm:flex  px-4 py-2  ">
+                <div className="wallet-connect   px-4 py-2  ">
                   <button
                     className=" items-center flex uppercase"
                     onClick={() => {
