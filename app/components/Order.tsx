@@ -25,7 +25,7 @@ const Order = () => {
             </p>
             <p className=" mb-2">
               The remainder goes to the dev to support further developments on
-              TOAD project.
+              TOAD.
             </p>
           </div>
         </div>
