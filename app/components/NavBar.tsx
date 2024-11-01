@@ -9,7 +9,6 @@ import { useContext } from "react";
 import { ModalContext } from "./../../context/index";
 import Link from "next/link";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 
 const style = {

@@ -6,11 +6,14 @@ import React from "react";
 import { useWriteContract, useReadContract, useAccount } from "wagmi";
 import { abi } from "../ABI/ABI";
 import Link from "next/link";
+import { useContext } from "react";
+import { ModalContext } from "./../../context/index";
 
 const Claim = () => {
   const { writeContract } = useWriteContract();
   const { address } = useAccount();
   const [numbers, setNumbers] = React.useState<number[]>([]);
+  const modal = useContext(ModalContext);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
@@ -47,6 +50,16 @@ const Claim = () => {
             return (
               <div className=" flex flex-col justify-center items-center text-2xl gap-4">
                 Connect Wallet to check eligibility
+                <div className="wallet-connect hidden sm:flex  px-4 py-2  ">
+                  <button
+                    className=" items-center flex uppercase"
+                    onClick={() => {
+                      modal.open();
+                    }}
+                  >
+                    Connect Wallet
+                  </button>
+                </div>
               </div>
             );
           } else {
