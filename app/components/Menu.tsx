@@ -15,7 +15,7 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 400,
+  width: 350,
   bgcolor: "#7a444a",
   border: "5px solid #f4b41b",
   boxShadow: 24,
@@ -136,7 +136,7 @@ const Menu = () => {
           aria-describedby="modal-modal-description"
         >
           <Box sx={style}>
-            <div className=" flex flex-col items-center justify-center text-white text-xl">
+            <div className=" flex flex-col  items-center justify-center text-white text-xl">
               <img src="cooking.png" alt="" width={140} />
               <div className=" flex">
                 <img src="fire.gif" alt="" width={20} />
