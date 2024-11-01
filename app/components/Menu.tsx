@@ -45,19 +45,19 @@ const Menu = () => {
     }
     handleOpen();
 
-    try {
-      const mintStatus = await writeContractAsync({
-        address: "0x98125d299ceE6DF2AcCC21e91093fdf66BB9DbFF",
-        abi,
-        functionName: "mint1",
-        //value: parseEther("0.03"),
-      });
-      if (mintStatus) {
-        handleClose();
-      }
-    } catch (e) {
-      handleClose();
-    }
+    // try {
+    //   const mintStatus = await writeContractAsync({
+    //     address: "0x98125d299ceE6DF2AcCC21e91093fdf66BB9DbFF",
+    //     abi,
+    //     functionName: "mint1",
+    //     //value: parseEther("0.03"),
+    //   });
+    //   if (mintStatus) {
+    //     handleClose();
+    //   }
+    // } catch (e) {
+    //   handleClose();
+    // }
   };
   const mint3 = async () => {
     if (address === undefined) {
@@ -65,15 +65,20 @@ const Menu = () => {
       return;
     }
     handleOpen();
-    const mintStatus = await writeContractAsync({
-      address: "0x98125d299ceE6DF2AcCC21e91093fdf66BB9DbFF",
-      abi,
-      functionName: "mint1",
-      //value: parseEther("0.03"),
-    });
-    if (mintStatus) {
-      handleClose();
-    }
+
+    // try {
+    //   const mintStatus = await writeContractAsync({
+    //     address: "0x98125d299ceE6DF2AcCC21e91093fdf66BB9DbFF",
+    //     abi,
+    //     functionName: "mint1",
+    //     //value: parseEther("0.03"),
+    //   });
+    //   if (mintStatus) {
+    //     handleClose();
+    //   }
+    // } catch (e) {
+    //   handleClose();
+    // }
   };
   const mint5 = async () => {
     if (address === undefined) {
@@ -81,15 +86,20 @@ const Menu = () => {
       return;
     }
     handleOpen();
-    const mintStatus = await writeContractAsync({
-      address: "0x98125d299ceE6DF2AcCC21e91093fdf66BB9DbFF",
-      abi,
-      functionName: "mint1",
-      //value: parseEther("0.03"),
-    });
-    if (mintStatus) {
-      handleClose();
-    }
+
+    // try {
+    //   const mintStatus = await writeContractAsync({
+    //     address: "0x98125d299ceE6DF2AcCC21e91093fdf66BB9DbFF",
+    //     abi,
+    //     functionName: "mint1",
+    //     //value: parseEther("0.03"),
+    //   });
+    //   if (mintStatus) {
+    //     handleClose();
+    //   }
+    // } catch (e) {
+    //   handleClose();
+    // }
   };
   const mint10 = async () => {
     if (address === undefined) {
@@ -97,15 +107,20 @@ const Menu = () => {
       return;
     }
     handleOpen();
-    const mintStatus = await writeContractAsync({
-      address: "0x98125d299ceE6DF2AcCC21e91093fdf66BB9DbFF",
-      abi,
-      functionName: "mint1",
-      //value: parseEther("0.03"),
-    });
-    if (mintStatus) {
-      handleClose();
-    }
+
+    // try {
+    //   const mintStatus = await writeContractAsync({
+    //     address: "0x98125d299ceE6DF2AcCC21e91093fdf66BB9DbFF",
+    //     abi,
+    //     functionName: "mint1",
+    //     //value: parseEther("0.03"),
+    //   });
+    //   if (mintStatus) {
+    //     handleClose();
+    //   }
+    // } catch (e) {
+    //   handleClose();
+    // }
   };
 
   useEffect(() => {
@@ -128,7 +143,7 @@ const Menu = () => {
                 <img src="fire.gif" alt="" width={20} />
                 <img src="fire.gif" alt="" width={20} />
               </div>
-              <h2 className=" mt-2">"Frog Soup is cooking"</h2>
+              <h2 className=" mt-2">"Frog Soup is cooking 🥗"</h2>
             </div>
           </Box>
         </Modal>
