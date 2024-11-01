@@ -24,8 +24,8 @@ const Order = () => {
               , further limiting circulating supply for good.
             </p>
             <p className=" mb-2">
-              The remainder goes to the dev to support further developments on
-              TOAD.
+                The 33% goes to the artist and 33% to the dev for support on
+              further developments on TOAD.
             </p>
           </div>
         </div>
