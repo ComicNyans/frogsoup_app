@@ -1,5 +1,5 @@
 This is a front end for SoupNFTs of the ToadKiller project
-## SoupNFTs of the ToadKiller App
+## Frog Soup Front_End
 
 to run locally first, clone the repo to you local pc
 
