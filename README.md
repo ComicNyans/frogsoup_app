@@ -1,7 +1,7 @@
 This is a front end for SoupNFTs of the ToadKiller project
 ## Frog Soup Front_End
 
-to run locally first, clone the repo to you local pc
+To run locally first, clone the repo to you local pc
 
 Navigate to the folder and open it in your code editor the run npm i ethers --legacy-peer-deps to install deps.
 
