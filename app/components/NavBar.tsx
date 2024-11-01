@@ -91,12 +91,6 @@ const NavBar = () => {
                   className=" flex flex-col  items-end w-full"
                 >
                   <Box sx={style}>
-                    <Typography
-                      id="modal-modal-title"
-                      className=" text-3xl mb-4"
-                    >
-                      Menu
-                    </Typography>
                     <div className=" text-[#f4b41b]  text-xl mr-4 justify-between gap-4 cursor-pointer sm:flex">
                       <a href="/claim" className="text-[#f4b41b]">
                         <h1 className="hover:text-[#f4cca1]">CLAIM</h1>
