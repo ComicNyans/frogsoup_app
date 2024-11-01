@@ -1,6 +1,11 @@
 /* eslint-disable */
 import React from "react";
-import { useWriteContract, useReadContract, useAccount } from "wagmi";
+import {
+  useWriteContract,
+  UseWriteContractReturnType,
+  useReadContract,
+  useAccount,
+} from "wagmi";
 import { useContext } from "react";
 import { ModalContext } from "./../../context/index";
 import { abi } from "../ABI/ABI";
@@ -8,6 +13,8 @@ import { useState, useEffect } from "react";
 import { parseEther } from "viem";
 
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 
 const style = {
@@ -29,9 +36,8 @@ const Menu = () => {
   const modal = useContext(ModalContext);
 
   const [minted, setMinted] = useState<any>();
-  const { writeContractAsync } = useWriteContract();
+  const { writeContract } = useWriteContract();
   const { address } = useAccount();
-
   const result = useReadContract({
     abi,
     address: "0x58172B314187e35892DeEc5DD0e2f847893e5405",
@@ -41,71 +47,17 @@ const Menu = () => {
   const mint1 = async () => {
     if (address === undefined) {
       modal.open();
-      return;
-    }
-    handleOpen();
 
-    try {
-      const mintStatus = await writeContractAsync({
-        address: "0x98125d299ceE6DF2AcCC21e91093fdf66BB9DbFF",
-        abi,
-        functionName: "mint1",
-        //value: parseEther("0.03"),
-      });
-      if (mintStatus) {
-        handleClose();
-      }
-    } catch (e) {
-      handleClose();
-    }
-  };
-  const mint3 = async () => {
-    if (address === undefined) {
-      modal.open();
       return;
     }
     handleOpen();
-    const mintStatus = await writeContractAsync({
+    writeContract({
       address: "0x98125d299ceE6DF2AcCC21e91093fdf66BB9DbFF",
       abi,
       functionName: "mint1",
+
       //value: parseEther("0.03"),
     });
-    if (mintStatus) {
-      handleClose();
-    }
-  };
-  const mint5 = async () => {
-    if (address === undefined) {
-      modal.open();
-      return;
-    }
-    handleOpen();
-    const mintStatus = await writeContractAsync({
-      address: "0x98125d299ceE6DF2AcCC21e91093fdf66BB9DbFF",
-      abi,
-      functionName: "mint1",
-      //value: parseEther("0.03"),
-    });
-    if (mintStatus) {
-      handleClose();
-    }
-  };
-  const mint10 = async () => {
-    if (address === undefined) {
-      modal.open();
-      return;
-    }
-    handleOpen();
-    const mintStatus = await writeContractAsync({
-      address: "0x98125d299ceE6DF2AcCC21e91093fdf66BB9DbFF",
-      abi,
-      functionName: "mint1",
-      //value: parseEther("0.03"),
-    });
-    if (mintStatus) {
-      handleClose();
-    }
   };
 
   useEffect(() => {
@@ -175,7 +127,18 @@ const Menu = () => {
               <img src="/3soup.gif" alt="" />
             </div>
           </div>
-          <button className="px-4 py-2 mint-button" onClick={mint3}>
+          <button
+            className="px-4 py-2 mint-button"
+            onClick={() => {
+              console.log(44);
+              writeContract({
+                abi,
+                address: "0x6b175474e89094c44da98b954eedeac495271d0f",
+                functionName: "mint3",
+                value: parseEther("0.08"),
+              });
+            }}
+          >
             <span className="mintfor">MINT FOR</span>
             <span className="price">0.08ETH</span>
           </button>
@@ -193,7 +156,18 @@ const Menu = () => {
               <img src="/5soup.gif" alt="" />
             </div>
           </div>
-          <button className="px-4 py-2 mint-button" onClick={mint5}>
+          <button
+            className="px-4 py-2 mint-button"
+            onClick={() => {
+              console.log(44);
+              writeContract({
+                abi,
+                address: "0x6b175474e89094c44da98b954eedeac495271d0f",
+                functionName: "mint5",
+                value: parseEther("0.12"),
+              });
+            }}
+          >
             <span className="mintfor">MINT FOR</span>
             <span className="price">0.12ETH</span>
           </button>
@@ -213,7 +187,18 @@ const Menu = () => {
               <img src="/10soup.gif" alt="" />
             </div>
           </div>
-          <button className="px-4 py-2 mint-button" onClick={mint10}>
+          <button
+            className="px-4 py-2 mint-button"
+            onClick={() => {
+              console.log(44);
+              writeContract({
+                abi,
+                address: "0x6b175474e89094c44da98b954eedeac495271d0f",
+                functionName: "mint10",
+                value: parseEther("0.20"),
+              });
+            }}
+          >
             <span className="mintfor">MINT FOR</span>
             <span className="price">0.20ETH</span>
           </button>

@@ -55,6 +55,13 @@ const NavBar = () => {
             <a href="/burn" className="text-[#f4b41b]">
               <h1 className="hover:text-[#f4cca1]">BURN</h1>
             </a>
+            <a
+              href="https://shibarium.shib.io/bridge-nfts"
+              target="blank"
+              className="text-[#f4b41b]"
+            >
+              <h1 className="hover:text-[#f4cca1]">BRIDGE</h1>
+            </a>
           </div>
 
           <div className="wallet-connect hidden sm:flex  px-4 py-2  ">
@@ -96,6 +103,13 @@ const NavBar = () => {
                       </a>
                       <a href="/burn" className="text-[#f4b41b]">
                         <h1 className="hover:text-[#f4cca1]">BURN</h1>
+                      </a>
+                      <a
+                        href="https://shibarium.shib.io/bridge-nfts"
+                        target="blank"
+                        className="text-[#f4b41b]"
+                      >
+                        <h1 className="hover:text-[#f4cca1]">BRIDGE</h1>
                       </a>
                     </div>
                   </Box>
