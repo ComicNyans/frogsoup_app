@@ -15,7 +15,7 @@ const Order = () => {
               Chefs and ready for many adventures to come.
             </p>
             <p className="text-xl my-4 font-bold">
-              25% of each mint buys $TOAD and sends it to be locked away safely
+              33% of each mint buys $TOAD and sends it to be locked away safely
               in
               <a href="https://etherscan.io/address/0x000000000000000000000000000000000000dead">
                 {" "}
