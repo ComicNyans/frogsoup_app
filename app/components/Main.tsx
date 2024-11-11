@@ -5,7 +5,7 @@ import Menu from "./Menu";
 
 const Main = () => {
   return (
-    <div className="container mx-auto px-4 py-8 flex flex-col items-center lg:flex-row lg:items-start lg:flex  lg:justify-between gap-4 text-black">
+    <div className="container mx-auto px-4 py-8 flex flex-col items-center lg:flex-row lg:items-start lg:flex lg:justify-between gap-8 text-black">
       <Menu />
       <Order />
     </div>

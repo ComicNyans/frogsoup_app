@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-
 const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -13,8 +12,10 @@ const config: Config = {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        // Fixed syntax error and added font family
-        roboto: ['"Roboto Condensed"', "sans-serif"], // Added Roboto Condensed
+        roboto: ["var(--font-roboto-condensed)"],
+        'open-sans': ["var(--font-open-sans)"],
+        playfair: ["var(--font-playfair)"],
+        'memo-gold': ["var(--font-memo-gold)"],
       },
     },
   },
