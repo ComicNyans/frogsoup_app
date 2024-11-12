@@ -196,7 +196,7 @@ export default function Claim() {
                 <h1 className="text-2xl sm:text-3xl mb-4 sm:mb-6 text-center md:text-left">Holder of an OG Soup?</h1>
                 <p className="mb-3 sm:mb-4 text-center md:text-left">OG Soups can be claimed here.</p>
                 <p className="mb-4 sm:mb-6 text-center md:text-left">
-                  The V1 Soup will be burned, and the matching V2 soup will be delivered with the 
+                  The V1 Soup will be burned, and the matching V2 Soup will be delivered with the 
                   addition of a Golden Soup badge to signify early support.
                 </p>
               </div>
