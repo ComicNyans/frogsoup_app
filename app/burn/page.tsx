@@ -25,7 +25,7 @@ export default function Burn() {
   }, []);
 
   return (
-    <div className="flex items-center justify-center flex-1 text-white flex-col gap-4 text-base sm:text-lg md:text-2xl text-center px-4 sm:px-8 pixel-text mt-32">
+    <div className="min-h-screen w-full flex flex-col items-center justify-center text-white px-4 sm:px-8 pixel-text mt-32 overflow-auto">
       <div className="text-[#f47e1b] max-w-full">
         <div className="flex items-center justify-center mb-4 flex-col lg:flex-row lg:items-center lg:justify-center">
           <span className="text-[#a93b3b] text-4xl sm:text-6xl md:text-8xl" data-numbers>1,000,000,000</span>

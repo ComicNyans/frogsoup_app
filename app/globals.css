@@ -16,8 +16,10 @@
 
 
 body {
+  min-height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
     background: #a05b53;
     background: #7a444a;
     background: #472d3c;
@@ -26,7 +28,8 @@ body {
 }
 
 main {
-    flex: 1
+    flex: 1;
+    overflow-y: auto;
 }
 
 header,footer {
@@ -257,7 +260,7 @@ footer a:hover .footer-link {
     cursor: pointer!important;
     /* width: 130px; */
     padding: 25px 40px;
-    line-height: 24px;
+    line-height: 40px;
     /* text-shadow: 1px 0px #472d3c; */
 }
 
