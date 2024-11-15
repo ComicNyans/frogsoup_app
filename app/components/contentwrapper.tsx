@@ -28,11 +28,11 @@ export default function ContentWrapper({ children }: { children: React.ReactNode
   }
 
   return (
-	<div 
-	  className="max-w-[1440px] mx-auto relative overflow-hidden flex flex-col flex-1"
-	  style={{ backgroundColor: getPageColors(pathname).lightColor }}
-	>
-	  {children}
-	</div>
-  );
-}
+	  <div 
+		className="max-w-[1440px] mx-auto relative overflow-hidden md:overflow-visible overflow-auto flex flex-col flex-1"
+		style={{ backgroundColor: getPageColors(pathname).lightColor }}
+	  >
+		{children}
+	  </div>
+	);
+  }

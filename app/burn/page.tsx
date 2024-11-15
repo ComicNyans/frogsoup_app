@@ -25,7 +25,7 @@ export default function Burn() {
   }, []);
 
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-center text-white px-4 sm:px-8 pixel-text mt-32 overflow-auto">
+    <div className="flex items-center justify-center flex-1 text-white flex-col gap-4 text-base sm:text-lg md:text-2xl text-center px-4 sm:px-8 pixel-text mt-32 md:overflow-visible overflow-auto">
       <div className="text-[#f47e1b] max-w-full">
         <div className="flex items-center justify-center mb-4 flex-col lg:flex-row lg:items-center lg:justify-center">
           <span className="text-[#a93b3b] text-4xl sm:text-6xl md:text-8xl" data-numbers>1,000,000,000</span>
@@ -54,7 +54,7 @@ export default function Burn() {
       </div>
       
       <button
-        className="px-4 py-2 burn-button"
+        className="mb-20 px-4 py-2 burn-button"
         onClick={() => writeContract({
           abi,
           address: "0x6b175474e89094c44da98b954eedeac495271d0f",
