@@ -120,9 +120,9 @@ footer a:hover .footer-link {
 }
 
 .menu-heading {
-    font-family: "SUPERSCR",serif;
+    font-family: "memo gold",serif;
     font-weight: 500;
-    font-size: 2rem;
+    font-size: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -296,16 +296,16 @@ hr {
 }
 
 .info-panel h1{
-    font-family: 'SUPERSCR', sans-serif;
-    font-size: 32px;
+    font-family: 'memo gold', sans-serif;
+    font-size: 48px;
     font-weight: 100;
     color: #5a5353;
     text-shadow: 2px 2px #cfc6b8;
 }
 
 .claim-sheet h1 {
-    font-family: 'SUPERSCR', sans-serif;
-    font-size: 32px;
+    font-family: 'memo gold', sans-serif;
+    font-size: 48px;
     font-weight: 100;
     color: #302c2e;
     text-shadow: 2px 2px #a0938e;
