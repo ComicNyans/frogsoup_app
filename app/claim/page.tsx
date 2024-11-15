@@ -161,7 +161,7 @@ export default function Claim() {
         )}
 
         <p className="text-sm text-[#5a5353] text-center sm:text-left">
-          Multiple soups can be claimed by adding multiple IDs
+          Multiple soups can be claimed by adding multiple IDs in the format "<span data-numbers>0001</span>".
         </p>
       </div>
     );
@@ -196,7 +196,7 @@ export default function Claim() {
                 <h1 className="text-2xl sm:text-3xl mb-4 sm:mb-6 text-center md:text-left">Holder of an OG Soup?</h1>
                 <p className="mb-3 sm:mb-4 text-center md:text-left">OG Soups can be claimed here.</p>
                 <p className="mb-4 sm:mb-6 text-center md:text-left">
-                  The V1 Soup will be burned, and the matching V2 Soup will be delivered with the 
+                  The V1 Soup will be checked, and the matching V2 Soup will be delivered with the 
                   addition of a Golden Soup badge to signify early support.
                 </p>
               </div>
